@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-dom'
 
 const UserNew = props => (
-    <Link to={"jarno.pl/todos/" + props.user.todo}>
+    <Link to={"jarno.pl/todos/" + props.user}>
         <div
             key={props.user.name}
 
@@ -11,5 +11,8 @@ const UserNew = props => (
         </div>
     </Link>
 )
+
+
+
 
 export default UserNew
