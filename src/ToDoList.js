@@ -15,6 +15,7 @@ class ToDoList extends React.Component {
                         <input placeholder="enter task">
                         </input>
                         <button type="submit">add</button>
+                        <button type="submit">delete</button>
                     </form>
                 </div>
             </div>
