@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
 
 
-class ToDoList extends Component {
+class ToDoList extends React.Component {
     render() {
+        var moja
+        {
+            name: "Inna"
+        };
         return (
             <div className="todoList">
-                <h1>Lorem ipsum</h1>
+                <h2>Todo list</h2>
                 <div class="header">
-                    <form>
+                    <form onSubmit={Component}>
                         <input placeholder="enter task">
                         </input>
                         <button type="submit">add</button>
@@ -19,6 +23,5 @@ class ToDoList extends Component {
     }
 
 }
-
 
 export default ToDoList;
