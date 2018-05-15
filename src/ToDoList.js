@@ -3,10 +3,7 @@ import React, {Component} from 'react';
 
 class ToDoList extends React.Component {
     render() {
-        var moja
-        {
-            name: "Inna"
-        };
+
         return (
             <div className="todoList">
                 <h2>Todo list</h2>
