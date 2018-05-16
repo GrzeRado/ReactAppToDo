@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>My React App</title>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
     </head>
+
 <body>
 </script>
 <div id="root">
@@ -22,5 +22,17 @@
         firebase.initializeApp(config);
         </div>
 
-</body>
+        componentWillMount: function(){
+            this.firebaseRef = addFirebase('https://console.firebase.google.com/project/user-data-react/database/user-data-react/data/todos');
+        },
+
+handleTodoAdd: function(text){
+            var newTodo = {
+                id. this.state.todos.length + 1,
+            text: text
+        }
+        this.setState({todos: this.set.state.todos.concat(newTodo)});
+        },
+
+        </body>
 </html>
