@@ -1,8 +1,7 @@
 <html>
 <head>
-    <title>My React App</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://cdn.firebase.com/js/client/1.0.17/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.25/browser.min.js"></script>
     </head>
 
 <body>
@@ -26,13 +25,48 @@
             this.firebaseRef = addFirebase('https://console.firebase.google.com/project/user-data-react/database/user-data-react/data/todos');
         },
 
-handleTodoAdd: function(text){
-            var newTodo = {
-                id. this.state.todos.length + 1,
-            text: text
+        render: function(){
+            return(
+                <div>
+            <TodoForm
+            {...this.state}
+            changeText={this.handleChangeText}
+            onTodoUpdate={this.handleTodoUpdate}
+            onTodoAdd={this.handleTodoAdd}/>
+
+            <TodoList
+            {...this.state}
+            editTodo={this.handleTodoEdit}
+            deleteTodo={this.handleTodoDelete}/>
+            </div>
+            )
+        },
+
+handleTodoDelete: function(todo){
+            var todos =
+            this.state.todos;
+            for(var i, i<todos.length; i++){
+            if (todos[i].id == todo.id){
+            todos.splice(i,1);
+        }
+        }
         }
         this.setState({todos: this.set.state.todos.concat(newTodo)});
         },
+
+        handleTodoAdd: function(text){
+            var newTodo = {
+            id. this.state.todos.length + 1,
+            text: text
+        }
+         this.firebaseRef.push(newTodo);
+
+
+            this.setState({todos: this.set.state.todos.concat(newTodo)});
+        },
+
+
+
 
         </body>
 </html>
