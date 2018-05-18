@@ -1,17 +1,29 @@
-import React from 'react'
-import {Link} from 'react-dom'
+import {database} from './firebaseData'
 
-/*const UserNew = props => (
-    <Link to={"jarno.pl/todos/" + props.user}>
-        <div
-            key={props.user.name}
+const SET_USER = 'auth/SET_USER'
 
-        >
-            {props.user.name.first} {props.user.name.last}
-        </div>
-    </Link>
-)*/
+const setUser = (user) => ({
+    type: SET_USER,
+    userData: user
+})
 
+const initialState = {
+    user: null
+}
 
-
-export default User;
+export default (state = initialState, action) => {
+    switch (action.type) {
+        case SET_USER:
+            return {
+                ...state,
+                user: action.userData
+            }
+        case SET_LOGIN_LOGS:
+            return {
+                ...state,
+                loginLogs: action.logsData
+            }
+        default:
+            return state
+    }
+}
