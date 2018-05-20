@@ -12,7 +12,7 @@ class TodoApp extends React.Component{
     this.state = {
         data:[]
     }
-    this.apiUrl = 'https://57b1924b46b57d1100a3c3f8.mockapi.io/api/todos'
+    this.apiUrl = 'https://console.firebase.google.com/project/user-data-react/database/user-data-react/data/todos'
 
 }
 
